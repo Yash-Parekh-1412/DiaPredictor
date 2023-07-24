@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Maler</title>
+
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+    <!-- font awesome style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700|Roboto:400,700&display=swap" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="../static/css/responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="hero_area">
+        <!-- header section strats -->
+        <header class="header_section">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="../static/images/logo.png" alt="">
+                        <span>
+                            Maler
+                        </span>
+                    </a>
+                </nav>
+            </div>
+        </header>
+        <!-- end header section -->
+    <div>
+
+
+    <div class="form">
+        <br><br><br><br><br>
+        <h1 class="center">DECISION TREE MODEL</h1>
+        <hr>
+        <br>
+        <h2 class="center">ENTER PATIENT DETAILS</h2>
+        <br><br>
+        <form action='/predict' method="post" class="col s12">
+            <div class="row">
+                <div class="center input-field col s4">
+                    <label for="pregnancy"><b>Pregnancies</b></label>
+                    <br>
+                    <input type="range" min="0" max="17" value="3" class="range blue" name="Pregnancies" id="pregnancyInput" oninput="pregnancyOutput.value = pregnancyInput.value"/>
+                    <output id="pregnancyOutput">3</output>
+                </div>
+                <div class="center input-field col s4">
+                    <label for="glucose"><b>Glucose</b></label>
+                    <br>
+                    <input type="range" min="44" max="200" value="120" class="range blue" name="Glucose" id="glucoseInput" oninput="glucoseOutput.value = glucoseInput.value"/>
+                    <output id="glucoseOutput">120</output>
+                </div>
+                <div class="center input-field col s4">
+                    <label for="bp"><b>Blood Pressure</b></label>
+                    <br>
+                    <input type="range" min="24" max="122" value="70" class="range blue" name="BloodPressure" id="bpInput" oninput="bpOutput.value = bpInput.value"/>
+                    <output id="bpOutput">70</output>
+                </div>
+                <div class="center input-field col s4">
+                    <label for="st"><b>Skin Thickness</b></label>
+                    <br>
+                    <input type="range" min="7" max="100" value="20" class="range blue" name="SkinThickness" id="stInput" oninput="stOutput.value = stInput.value"/>
+                    <output id="stOutput">20</output>
+                </div>   
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="center input-field col s4">
+                    <label for="insulin"><b>Insulin</b></label>
+                    <br>
+                    <input type="range" min="14" max="846" value="79" class="range blue" step="1" name="Insulin" id="insulinInput" oninput="insulinOutput.value = insulinInput.value"/>
+                    <output id="insulinOutput">79</output>
+                </div>
+                <div class="center input-field col s4">
+                    <label for="bmi"><b>BMI</b></label>
+                    <br>
+                    <input type="range" min="18" max="67" value="20" class="range blue" name="BMI" id="bmiInput" oninput="bmiOutput.value = bmiInput.value"/>
+                    <output id="bmiOutput">20</output>
+                </div>
+                <div class="center input-field col s4">
+                    <label for="dpf"><b>Diabetes Predegree Fuction</b></label>
+                    <br>
+                    <input type="range" min="0.078" max="2.4" value="0.47" class="range blue" step="0.001" name="DiabetesPredigreeFunction" id="dpfInput" oninput="dpfOutput.value = dpfInput.value"/>
+                    <output id="dpfOutput">0.47</output>
+                </div>
+                <div class="center input-field col s4">
+                    <label for="age"><b>Age</b></label>
+                    <br>
+                    <input type="range" min="21" max="88" value="33" class="range blue" id="ageInput" name="Age" oninput="ageOutput.value = ageInput.value"/>
+                    <output id="ageOutput">33</output>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row center">
+                <button type="submit" class="button-30 center">Predict Probability</button>
+            </div>
+        </form> 
+        <div class="center">
+            <br><br>
+            {{ dtPred }}
+            <br><br><br>
+        </div>
+    </div>
+
+    <!-- footer section -->
+    <section class="container-fluid footer_section">
+        <p>
+            &copy; 2022 All Rights Reserved. Design by Yash Parekh
+        </p>
+    </section>
+    <!-- footer section -->
+</body>
+</html>
