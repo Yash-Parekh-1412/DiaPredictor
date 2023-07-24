@@ -1,2 +1,2 @@
 ﻿# DiaPredictor
-## Diabetes prediction system using python, falsk, html and css
+ Diabetes prediction system using python, falsk, html and css
